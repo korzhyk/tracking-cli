@@ -1,0 +1,44 @@
+{
+  "name": "form5-appname",
+  "author": "Form5 <contact@form5.is>",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "coffee server.coffee"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "coffee-script": "latest",
+    "i18n-2": "latest",
+    "mongoose": "latest",
+    "mongoose-times": "latest",
+    "mongoose-redis-cache": "latest",
+    "connect-mongo": "latest",
+    "connect-redis": "latest",
+    "hiredis": "latest",
+    "redis": "latest",
+    "pg": "latest",
+    "lodash": "latest",
+    "colors": "latest",
+    "connect-assets": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "bcrypt": "latest",
+    "connect-flash": "latest",
+    "view-helpers": "latest",
+    "less": "latest",
+    "moment": "latest",
+    "marked": "latest",
+    "socket.io": "latest"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-coffeelint": "latest",
+    "node-dev": "latest"
+  }
+}

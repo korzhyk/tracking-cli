@@ -1,0 +1,7 @@
+- f = new Form(tracker)
+!= f.begin({ action: '/trackers' })
+  != csrf()
+  != f.input('name', { placeholder: __('Name for tracker') })
+  != f.input('uid', { placeholder: __('Unique identificator') })
+  != f.button(__('Add tracker'))
+!= f.end()

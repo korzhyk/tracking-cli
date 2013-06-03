@@ -1,0 +1,24 @@
+extends _base
+
+block prepend title
+  | List trackers
+
+block main
+  if !trackers.length
+    .text-center
+      .lead No trackers found 
+      != link_to(__('Add new'), '/trackers/new')
+  else
+    table.table
+      tr
+        th Name
+        th Created
+        th Actions
+      each t in trackers
+        tr
+          td= t.name
+          td= t.created_at
+          td
+            a(href="/trackers/#{t._id}") Show
+            a(href="/trackers/#{t._id}/edit") Edit
+            a(href="/trackers/#{t._id}", data-method="DELETE") Delete

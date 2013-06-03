@@ -1,0 +1,14 @@
+extends ../layouts/front
+
+block content
+  .container
+    .row
+      .col.col-lg-12.head-menu
+        != link_to(__('← Go back'), '/', { class: 'pull-left' })
+        != link_to(__('Sign in →'), '/login', { class: 'pull-right' })
+    .row
+      .col.col-lg-4.col-offset-4.header
+        h2= __('Log in to your account')
+    .row
+      .col.col-lg-4.col-offset-4.login-container
+        block main

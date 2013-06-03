@@ -1,0 +1,35 @@
+extends _base
+
+block title
+  = current_user.username
+  |  - 
+  = __('Control panel')
+
+block stylesheets
+  != css('css/account/show')
+
+block append javascripts
+  != js('js/account')
+
+block main
+  .col.col-lg-4
+    .user-info
+      dl.dl-horizontal
+        dt
+          #userpic
+            img(src="http://www.gravatar.com/avatar/#{current_user.email.md5}?s=160")
+        dd
+          h3
+            = current_user.fullname || current_user.username
+            |  
+            != link_to(__('Edit'), '/account/edit', { class: 'label' })
+          p(data-timeago=current_user.created_at.to_s)= __('Registration %s', time_ago(current_user.created_at))
+      dl.dl-horizontal
+        dt= __('Email')
+        dd
+          != link_to(current_user.email, "mailto:" + current_user.email)
+        dt= __('Registration')
+        dd= format_date(current_user.created_at)
+
+
+  .col.col-lg-8

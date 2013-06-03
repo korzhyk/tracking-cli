@@ -1,0 +1,75 @@
+.content
+  height: 100%
+.module
+
+  margin-bottom: 15px
+  .select-bar
+    padding: 10px 10px 0 10px
+    background: #fafafb
+    border-bottom: 1px solid #e1e1e2
+    select
+      margin-bottom: 10px
+
+  .date-range
+    margin-bottom: 10px
+    label
+      display: inline-block
+      width: 49%
+
+
+  .list-points
+    font-size: .9em
+
+  .nav-tabs
+    border-bottom: 0
+
+  .content
+    padding: 10px 10px 0 10px
+    word-break: break-all
+
+  .dl-horizontal
+    dt
+      width: 80px
+    dd
+      margin-left: 90px
+
+  .tracker-item, .polyline-item
+    +clearfix
+    cursor: pointer
+    background: #f5f5f5
+    border-radius: 4px
+    margin-bottom: 5px
+    padding: 10px
+    &:hover
+      background: #eaeaea
+
+    .pic
+      margin-right: 10px
+
+  .direction, .status
+    display: inline-block
+    width: 16px
+    height: 16px
+    margin-right: 4px
+    +transition
+
+  .direction
+    background: url(/img/map/direction-arrow.png) no-repeat
+  .status
+    &.AUTOSTART
+      background: url(/img/map/start.png) no-repeat
+    &.AUTOSTOP
+      background: url(/img/map/stop.png) no-repeat
+    &.AUTO
+      background: url(/img/map/navigate.png) no-repeat
+    &.ANSWER
+      background: url(/img/map/answer.png) no-repeat
+    &.STORAGE
+      background: url(/img/map/storage.png) no-repeat
+
+.bar-module
+  display: inline-block
+  margin-left: 10px
+
+  .current-time
+    margin-left: 4px

@@ -1,0 +1,67 @@
+@import import/main
+@import map/modules
+@import map/top-bar
+@import map/leaflet
+
+html, body, .table-fluid, .content-page, #map
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+.table-fluid
+  display: table
+  .row
+    display: table-row
+    &:before, &:after
+      display: none
+    .cell
+      display: table-cell
+
+.table-fluid, .row, .cell
+  padding: 0
+  margin: 0
+
+#sidebar-container
+  width: 300px
+  border-right: 1px solid rgba(black, .15)
+
+#advanced-container
+  width: 300px
+  border-right: 1px solid #e1e1e1
+  display: none
+
+#header-container
+  height: 40px
+  +background-image(linear-gradient(#f9f9f9, #f3f3f3))
+
+#top-bar
+  border-bottom: 1px solid rgba(black, .15)
+
+#footer-container
+  font-size: .9em
+  line-height: 21px
+  height: 21px
+  +background-image(linear-gradient(#f3f3f3, #f9f9f9))
+
+#footer-bar
+  border-top: 1px solid rgba(black, .15)
+
+#main-container
+  opacity: 0
+  +transition
+  +transform(scale(0))
+
+#loading-container
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  +transition
+  +background-image(radial-gradient(#fff, #ccc))
+
+#statistic-page,
+#reports-page
+  height: 0

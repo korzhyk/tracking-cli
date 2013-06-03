@@ -1,0 +1,5 @@
+each msg, key in flash()
+  -key = key == 'error' ? 'danger' : key
+  div(class="alert alert-#{key}")
+    button.close(type="button", data-dismiss="alert") &times;
+    = msg

@@ -1,0 +1,18 @@
+extends _base
+
+block title
+  = __('Login')
+
+block main
+  fieldset
+    -f = new Form()
+    != f.begin()
+      != csrf()
+      != f.input('username', { placeholder: __('Username or Email') })
+      != f.input('password', { placeholder: __('Password') })
+      label
+        != f.input('remember_me', { type: 'checkbox' })
+        |  
+        = __('Remember me')
+      != f.button(__('Login'), { class: 'btn btn-success pull-right' })
+    != f.end()

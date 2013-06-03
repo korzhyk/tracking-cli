@@ -1,0 +1,7 @@
+mixin css(arr)
+  each s in arr
+    link(href="/#{s}.css", rel="stylesheet")
+
+mixin js(arr)
+  each s in arr
+    link(href="/#{s}.js", rel="stylesheet")

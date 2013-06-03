@@ -1,0 +1,63 @@
+/* line 3, ../../assets/css/front.sass */
+html, body {
+  color: #547892;
+  background: url(../img/squairy_light/bg.png);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 100%;
+  background-color: #eef4f8;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, color-stop(0%, #eef4f8), color-stop(100%, #b8c9d6));
+  background-image: -webkit-radial-gradient(#eef4f8, #b8c9d6);
+  background-image: radial-gradient( #eef4f8, #b8c9d6);
+}
+
+/* line 10, ../../assets/css/front.sass */
+.registration-container, .login-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 2px rgba(0, 0, 0, 0.05);
+  background-image: -webkit-linear-gradient( rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5));
+  background-image: linear-gradient( rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5));
+}
+/* line 16, ../../assets/css/front.sass */
+.registration-container input, .login-container input {
+  margin-bottom: 15px;
+}
+
+/* line 20, ../../assets/css/front.sass */
+.login-container label {
+  line-height: 34px;
+  margin-bottom: 0;
+}
+
+/* line 24, ../../assets/css/front.sass */
+h2, h4 {
+  font-weight: 300;
+}
+
+/* line 26, ../../assets/css/front.sass */
+.header {
+  margin-bottom: 20px;
+}
+
+/* line 29, ../../assets/css/front.sass */
+.head-menu {
+  *zoom: 1;
+  margin-bottom: 40px;
+}
+/* line 18, ../../assets/css/burbon/addons/_clearfix.scss */
+.head-menu:before, .head-menu:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../../assets/css/burbon/addons/_clearfix.scss */
+.head-menu:after {
+  clear: both;
+}
+/* line 32, ../../assets/css/front.sass */
+.head-menu a {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  display: block;
+}

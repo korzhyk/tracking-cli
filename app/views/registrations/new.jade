@@ -1,0 +1,18 @@
+extends _base
+
+block prepend title
+  = __('Registration')
+
+block main
+  fieldset
+    - f = new Form(user)
+    != f.begin({ action: '/signup' })
+      != csrf()
+      != f.input('fullname', { placeholder: __('Enter Full Name') })
+      != f.input('username', { placeholder: __('Username') })
+      != f.input('email', { placeholder: __('Email') })
+      != f.input('password', { placeholder: __('Password') })
+      != f.input('password_confirmation', { placeholder: __('Repeat password') })
+      != f.button(__('Register'))
+      != link_to(__('Log in'), '/login', { class: "btn btn-success pull-right" })
+    != f.end()

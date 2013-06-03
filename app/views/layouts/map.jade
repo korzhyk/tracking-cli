@@ -1,0 +1,21 @@
+include ../shared/head
+
+!= css('vendor/bootstrap/bootstrap/css/bootstrap')
+!= css('css/map')
+
+block stylesheets
+//if lt IE 9
+  script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+
+//- include ../shared/top-bar
+
+//- block append content
+//-   .container.messages
+//-     .row
+//-       .col.col-lg-12
+//-         include ../shared/messages
+
+block content
+
+block prepend javascripts
+  != js('vendor/script', 'js/map')

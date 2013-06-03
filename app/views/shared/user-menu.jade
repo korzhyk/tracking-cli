@@ -1,0 +1,19 @@
+if current_user
+  ul.nav.navbar-nav.pull-right
+    li!= link_to(__('Map'), '/map')
+    li.dropdown
+      a.dropdown-toggle(href="/account", data-toggle="dropdown")
+        = __('Welcome %s!', current_user.fullname)
+        | 
+        b.caret
+      ul.dropdown-menu(role="menu", aria-labelledby="dropdownMenu")
+        li!= link_to(__('Account'), '/account')
+        li!= link_to(__('Settings'), '/account/edit')
+        li!= link_to(__('Trackers'), '/trackers')
+        li.divider
+        li!= link_to(__('Log out'), '/logout', { data: { method: 'DELETE' } })
+
+else
+  ul.nav.navbar-nav.pull-right
+    li!= link_to(__('Signup'), '/signup')
+    li!= link_to(__('Login'), '/login')

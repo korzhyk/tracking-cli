@@ -1,0 +1,20 @@
+include ../shared/head
+
+!= css('vendor/bootstrap/bootstrap/css/bootstrap')
+!= css('css/default')
+block stylesheets
+//if lt IE 9
+  script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+
+include ../shared/top-bar
+
+block append content
+  .container.messages
+    .row
+      .col.col-lg-12
+        include ../shared/messages
+
+block content
+
+block prepend javascripts
+  != js({ src: 'vendor/script' }, { src: 'js/default' })

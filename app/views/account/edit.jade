@@ -1,0 +1,57 @@
+extends _base
+
+block title
+  = current_user.username
+  |  - 
+  = __('Edit account')
+
+block stylesheets
+  != css('css/account/edit')
+
+block main
+  .col.col-lg-4
+    ul.list-group
+      a.list-group-item(href="#info", data-toggle="tab")
+        != icon('chevron-right')
+        | 
+        = __('Info')
+      a.list-group-item(href="#avatar", data-toggle="tab")
+        != icon('chevron-right')
+        | 
+        = __('Avatar')
+      a.list-group-item(href="#permissions", data-toggle="tab")
+        != icon('chevron-right')
+        | 
+        = __('Permissions')
+
+      a.list-group-item(href="#destroy", data-toggle="tab")
+        != icon('chevron-right')
+        | 
+        = __('Delete account')
+
+
+  .col.col-lg-8.tab-content
+    .tab-pane.active#info
+      | Info
+    .tab-pane#avatar
+      | Avatar
+    .tab-pane#permissions
+      | Permissions
+    .tab-pane#destroy
+      .panel.panel-danger
+        .panel-heading Delete account
+        p
+          form(action="/account", method="POST")
+            input(name="_method", value="DELETE", type="hidden")
+            != csrf()
+            p
+              label
+                input(name="IKnowWhatIDoing", type="checkbox")
+                |  Yes dete my account
+            p
+              label
+                | Fill current password
+                input(name="password", type="password", autocomplete="off")
+              button.btn.btn-danger(type="submit") DELETE MY ACCOUNT
+
+    

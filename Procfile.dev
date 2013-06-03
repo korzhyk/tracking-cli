@@ -1,0 +1,2 @@
+#dev: bin/devserver
+coffee: coffee -w -o public/js assets/js
