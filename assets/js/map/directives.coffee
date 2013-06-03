@@ -105,8 +105,7 @@ geocode.push ($http)->
     url = 'http://geocode-maps.yandex.ru/1.x/?kind=' + (attrs.kind or 'house') + '&results=1&format=json&geocode='
 
     lang = switch navigator.language
-      when 'uk'
-      when 'uk-ua' then 'uk-UA'
+      when 'uk', 'uk-ua' then 'uk-UA'
       when 'ru' then 'ru-RU'
       when 'en' then 'en-US'
       else 'en-US'
