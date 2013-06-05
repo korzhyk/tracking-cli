@@ -23,8 +23,8 @@ TrackerSchema = new Schema
 # Schema statics
 #
 TrackerSchema.statics =
-  list: (cb)->
-    @find().sort
+  list: (user, cb)->
+    @find(user: user._id).sort
       created_at: -1
     .lean()
     .exec(cb)
