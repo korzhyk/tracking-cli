@@ -2,7 +2,7 @@ $script [ '/js/extends.js' ], 'extends'
 $script [ '/vendor/bean.js' ], 'bean'
 $script [ '/vendor/lodash.js' ], 'lodash'
 $script [ '/vendor/moment/moment.js' ], ->
- $script [ '/vendor/moment/uk.js' ], 'moment'
+$script [ '/vendor/moment/uk.js' ], 'moment'
 $script [ '/vendor/jquery/jquery.js' ], 'jquery'
 $script [ '/vendor/spin.js' ], 'spin.js'
 $script [ '/socket.io/socket.io.js' ], 'socket.io'
@@ -67,10 +67,11 @@ $script.ready [ 'preload' ], ->
       '/js/map/modules/trackers/index.js'
       '/js/map/modules/map/index.js'
     ], 'mapApp'
+    
   $script.ready [ 'leaflet', 'angular' ], AngularReady
 
   bean.on document, 'app-ready', ->
     $script [ '/js/map/postload.js' ]
 
-  $script.ready [ 'mapApp','TrackersModule', 'MapModule' ], ->
+  $script.ready [ 'socket.io', 'mapApp', 'TrackersModule', 'MapModule' ], ->
     bean.fire document, 'app-ready'
