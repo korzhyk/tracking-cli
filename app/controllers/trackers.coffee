@@ -64,20 +64,20 @@ exports.destroy = (req, res) ->
 # Articles index
 #
 exports.index = (req, res) ->
-  Tracker.list (err, trackers) ->
+  Tracker.list req.user, (err, trackers) ->
     res.render 'trackers/index',
       trackers: trackers
 #
 # Articles index
 #
 exports.index_json = (req, res) ->
-  Tracker.list (err, trackers) ->
+  Tracker.list req.user, (err, trackers) ->
     res.json 
       type: 'trackers:list'
       data: trackers
 
 #
-# Find article by ID
+# Find tracker by ID
 #
 exports.load = (req, res, next, id) ->
   Tracker.findById(id).exec (err, tracker) ->
