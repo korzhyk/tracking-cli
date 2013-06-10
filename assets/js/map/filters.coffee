@@ -18,20 +18,20 @@ myFilters.filter 'direction', ->
     d = (deg - offset) / (offset * 2)
     
     dir += if d <= 0 or d >= 7
-      'N'
+      'Північ'
     else if d <= 1
-      'NE'
+      'Північний схід'
     else if d <= 2
-      'E'
+      'Схід'
     else if d <= 3
-      'SE'
+      'Південний схід'
     else if d <= 4
-      'S'
+      'Південь'
     else if d <= 5
-      'SW'
+      'Південни захід'
     else if d <= 6
-      'W'
-    else 'NW' 
+      'Захід'
+    else 'Північний захід'
 
 myFilters.filter 'moment', ->
   (m, format)->
