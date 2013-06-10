@@ -4,9 +4,9 @@
       <button class="btn btn-danger btn-small pull-right" ng-click="selectedTracker=null">&times;</button>
       <h4>{{selectedTracker.name}}</h4>
       <p>
-        <button class="btn btn-mini btn-primary" ng-click="panToSelectedTracker()" ng-disabled="!liveMode">Show on map</button>
+        <button class="btn btn-mini btn-primary" ng-click="panToSelectedTracker()" ng-disabled="!liveMode">Показати на карті</button>
         <label>
-          <input type="checkbox" ng-model="tracksSlectedTracker" ng-disabled="!liveMode"> Follow tracker
+          <input type="checkbox" ng-model="tracksSlectedTracker" ng-disabled="!liveMode"> Слідувати
         </label>
       </p>
       <ul class="nav nav-tabs">
@@ -14,7 +14,7 @@
           <a href="#liveMode" data-toggle="tab">Live</a>
         </li>
         <li ng-click="liveMode = false">
-          <a href="#historyMode" data-toggle="tab">History</a>
+          <a href="#historyMode" data-toggle="tab">Історія</a>
         </li>
       </ul>
     </div>
@@ -30,20 +30,20 @@
     <div class="tab-content">
       <div class="tab-pane active" id="liveMode">
         <dl class="dl-horizontal">
-          <dt>Last updated</dt>
+          <dt>Остані дані</dt>
           <dd>{{selectedTracker.livePoint.date | timeAgo}}</dd>
-          <dt>Speed</dt>
+          <dt>Швидкість</dt>
           <dd>{{selectedTracker.livePoint.speed | speed}}</dd>
-          <dt>Direction</dt>
+          <dt>Напрямок</dt>
           <dd>
             <span direction="selectedTracker.livePoint.direction" class="direction"></span>
             {{selectedTracker.livePoint.direction | direction}}</dd>
-          <dt>Status</dt>
+          <dt>Стан</dt>
           <dd>
             <span status="selectedTracker.livePoint.status" class="status"></span>
             {{selectedTracker.livePoint.status}}
           </dd>
-          <dt>Position</dt>
+          <dt>Розташування</dt>
           <dd geocode="selectedTracker.livePoint.latlng">{{selectedTracker.livePoint.latlng.lng}}, {{selectedTracker.livePoint.latlng.lat}}</dd>
         </dl>
         <chart type="spline" width="279" trigger="selectedTracker" serie="selectedTracker.points.toSpeedChart(10)" last="selectedTracker.livePoint.toSpeedChart()"></chart>
@@ -51,16 +51,16 @@
       <div class="tab-pane" id="historyMode">
         <div class="date-range">
           <label class='from'>
-            From
+            З
             <input pickdate-js ng-model='dateRange.from' max='dateRange.to' />
           </label>
           <label class='to'>
-            To
+            До
             <input pickdate-js ng-model='dateRange.to' min='dateRange.from' max='1' />
           </label>
-          <a href="#" ng-click="openStatsBar()" class="btn btn-small pull-right">Stats</a>
-          <button class="btn btn-success btn-small" ng-click="fetchHistory()">Show</button>
-          <h4>Paths</h4>
+          <!--<a href="#" ng-click="openStatsBar()" class="btn btn-small pull-right">Статистика</a>-->
+          <button class="btn btn-success btn-small" ng-click="fetchHistory()">Показати</button>
+          <h4>Маршрути</h4>
           <div ng-repeat="p in selectedTracker.historyLayer.getLayers()" ng-mouseover="highlightLayer(p)" ng-mouseout="resetHighlight(p)" ng-click="fitLayer(p)" class="polyline-item">
               {{p.distance()}}
             </div>

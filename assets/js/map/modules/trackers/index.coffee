@@ -132,7 +132,7 @@ TrackersList.push ($http, $rootScope, socket, leaflet)->
             leaflet.map.fitBounds t.historyLayer.getBounds()
           catch e
             console.log e
-        socket.emit 'get:last:points', tracker_id: t.id
+        socket.emit 'get:last:points', tracker_id: t.id, limit: 10
         @trackersList.push(t) 
       done(@trackersList)
       $rootScope.trackers = @trackersList

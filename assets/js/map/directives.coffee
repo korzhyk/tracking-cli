@@ -90,6 +90,18 @@ myDirectives.directive 'currentTime', ->
 
     setInterval updateTime, 1000
 
+myDirectives.directive 'timeAgo', ->
+  (scope, element, attrs)->
+    interval = null
+    scope.$watch attrs.timeAgo, (date)->
+      updateTime = ->
+        m = moment(date)
+        if m
+          element.html m.fromNow()
+
+      clearInterval(interval)
+      setInterval updateTime, 1000
+
 myDirectives.directive 'trackersCount', ->
   (scope, element, attrs)->
     scope.$watch 'trackers', (trackers)->
