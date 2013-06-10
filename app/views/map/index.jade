@@ -10,8 +10,8 @@ block main
       .cell#top-bar
           ul.menu.pull-left
             li.active!= link_to(icon('globe') + __('Map'), '#trackers-page', { data: { toggle: 'tab' } })
-//            li!= link_to(icon('dashboard') + __('Statistic'), '#statistic-page', { data: { toggle: 'tab' } })
-//            li!= link_to(icon('list-alt') + __('Reports'), '#reports-page', { data: { toggle: 'tab' } })
+            //li!= link_to(icon('dashboard') + __('Statistic'), '#statistic-page', { data: { toggle: 'tab' } })
+            //li!= link_to(icon('list-alt') + __('Reports'), '#reports-page', { data: { toggle: 'tab' } })
           ul.menu.pull-right
             li!= link_to(icon('user') + current_user.fullname, '/account')
             li!= link_to(icon('off') + __('logout'), '/logout', { data: { method: 'DELETE' } })
