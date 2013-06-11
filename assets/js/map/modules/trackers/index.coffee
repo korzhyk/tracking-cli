@@ -85,6 +85,7 @@ class Tracker
     @pointsHistory.eachPoint (p)->
       pline.addLatLng(p)
     @historyLayer.addLayer(pline)
+    console.log pline
     bean.fire @, 'history:done', @
 
 
