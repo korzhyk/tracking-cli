@@ -124,8 +124,8 @@ TrackersList.push ($http, $rootScope, socket, leaflet)->
       trackers = res.data.data
       for t in trackers
         t = new Tracker(t)
-        bean.on t, 'marker:set:latlng', ->
-          t.marker.addTo(leaflet.trackers)
+        bean.on t, 'marker:set:latlng', (m)->
+          m.addTo(leaflet.trackers)
         t.historyLayer.addTo(leaflet.tracks)
         bean.on t, 'history:done', ->
           try

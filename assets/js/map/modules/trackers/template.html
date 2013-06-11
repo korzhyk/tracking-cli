@@ -23,7 +23,7 @@
     <div class="tracker-item" ng-repeat="t in trackersList.active()" ng-click="selectTracker(t)" ng-mouseover="panToTracker(t)">
       <h5><span status="t.livePoint.status" class="status"></span>{{t.name}}</h5>
       <span tooltip="{{t.livePoint.date | moment}}">{{t.livePoint.date | timeAgo}}</span><br>
-      <span geocode="t.livePoint.latlng">{{t.livePoint.latlng.lng}}, {{t.livePoint.latlng.lat}}</span>
+      <span geocode="t.livePoint.latlng">...</span>
     </div>
   </div>
   <div ng-show="selectedTracker" class="content">
