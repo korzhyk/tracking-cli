@@ -46,6 +46,7 @@
           <dt>Розташування</dt>
           <dd geocode="selectedTracker.livePoint.latlng">{{selectedTracker.livePoint.latlng.lng}}, {{selectedTracker.livePoint.latlng.lat}}</dd>
         </dl>
+        <dl><dt>Розташування</dt></dl>
         <chart type="spline" width="279" trigger="selectedTracker" serie="selectedTracker.points.toSpeedChart(10)" last="selectedTracker.livePoint.toSpeedChart()"></chart>
       </div>
       <div class="tab-pane" id="historyMode">
