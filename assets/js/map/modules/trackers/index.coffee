@@ -81,9 +81,9 @@ class Tracker
     return @
 
   buildHistoryLayers: ->
-    p = L.polyline([])
+    pline = L.polyline([])
     @pointsHistory.eachPoint (p)->
-      p.addLatLng(p)
+      pline.addLatLng(p)
     @historyLayer.addLayer(p)
     bean.fire @, 'history:done', @
 
