@@ -74,7 +74,7 @@ class Tracker
     bean.on @, 'last:points', => @points.add.apply(@points, arguments)
     bean.on @, 'points', =>
       bean.fire @, 'history:start', @
-      @historyLayer.clearLayers()
+      #@historyLayer.clearLayers()
       @pointsHistory.clear()
       @pointsHistory.add.apply(@pointsHistory, arguments)
       @buildHistoryLayers()
